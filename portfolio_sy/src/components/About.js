@@ -172,7 +172,7 @@ const About = () => {
         {/* Certification Section */}
         <motion.div variants={containerVariants} className="mt-20 " > 
             <h3 className="text-4xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text text-center">Certification</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
