@@ -65,6 +65,20 @@ const About = () => {
     }
   ];
 
+  const career = [
+    {
+      company: "부린",
+      work: "시스템SW개발",
+      period: "2024년 1월 ~ 진행중"
+    },
+    {
+      company: "한밭자동제어",
+      work: "생산 및 재고관리",
+      period: "2018년 8월 ~ 2023년 2월"
+    }
+    
+  ];
+
   return (
     <section id="about" className="min-h-screen bg-gray-50 pt-24"> {/* Added top padding */}
       <motion.div
@@ -137,8 +151,26 @@ const About = () => {
           </div>
         </div>
         
+        {/* Career Section */}
+        <motion.div variants={containerVariants} className="mt-20 " > 
+            <h3 className="text-4xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text text-center">Career</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {career.map((com, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6"
+                >
+                  <h4 className="font-semibold text-xl mb-2">{com.company}</h4>
+                  <p className="text-gray-600 text-sm mb-1">{com.work}</p>
+                  <p className="text-gray-500 text-sm">{com.period}</p>
+                </motion.div>
+              ))}
+            </div>
+        </motion.div>
+        
         {/* Certification Section */}
-        <motion.div variants={containerVariants} className="mt-20 " > {/* Added margin-top */}
+        <motion.div variants={containerVariants} className="mt-20 " > 
             <h3 className="text-4xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text text-center">Certification</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {certifications.map((cert, index) => (
@@ -153,7 +185,8 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+        </motion.div>
+
         {/* Education Section */}
         <motion.div variants={containerVariants} className="mt-20">
           <h3 className="text-4xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text text-center">Education</h3>
