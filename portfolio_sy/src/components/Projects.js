@@ -21,15 +21,15 @@ const Projects = ({ onProjectClick }) => {
     const projects = [
       {
         id: 1,
-        title: "Project 1",
-        description: "프로젝트 설명",
-        image: "/api/placeholder/400/300",
-        technologies: ["React", "Node.js"],
+        title: "등산어때",
+        description: "등산러들을 위한 sns",
+        image: "/images/mountainProject.png",
+        technologies: ["Qgis", "Geoserver", "EgovFramework","javascript", "java"],
         details: {
-          overview: "프로젝트 상세 설명",
-          features: ["기능 1", "기능 2"],
-          github: "https://github.com/...",
-          demo: "https://..."
+          overview: `Gis(지리 정보 시스템)과 EgovFramework(전자정부 서비스 개발표준 프레임워크)를 공부하기 위하여 등산러들을 위한 SNS를 기획하여 만들었습니다. <br>
+                    벤치마킹은 Instagram을 참고하였습니다. <br>`,
+          features: ["로그인", "게시물관리", "친구의 게시물 조회", "모집게시물 관리", "댓글" , "도 경계 조회 및 선택" , "100대명산 정보 조회", "지역통계"],
+          github: "https://github.com/yuseonyoung/mountain_projects?tab=readme-ov-file"
         }
       },
       // 더 많은 프로젝트 추가
