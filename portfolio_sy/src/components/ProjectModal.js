@@ -41,15 +41,27 @@ const ProjectModal = ({ project, onClose }) => {
                     ))}
                   </ul>
                 </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.details.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700"
-                  >
-                    View on GitHub
-                  </a>
+                <div className="flex flex-row gap-4">
+                  {project.details.github && (
+                    <a
+                      href={project.details.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700"
+                    >
+                      View on GitHub
+                    </a>
+                  )}
+                  {project.details.demo && (
+                    <a
+                      href={project.details.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700"
+                    >
+                      View Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
