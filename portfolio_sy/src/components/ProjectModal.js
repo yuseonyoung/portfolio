@@ -23,7 +23,7 @@ const ProjectModal = ({ project, onClose }) => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-64 object-cover rounded-lg mb-6"
+                className="w-full h-auto max-h-80 object-cover rounded-lg mb-6"
               />
               <div className="space-y-4">
                 <div>
@@ -41,7 +41,7 @@ const ProjectModal = ({ project, onClose }) => {
                     ))}
                   </ul>
                 </div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-wrap gap-4">
                   {project.details.github && (
                     <a
                       href={project.details.github}
