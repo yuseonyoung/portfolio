@@ -84,7 +84,7 @@ const Projects = ({ onProjectClick }) => {
                     `,
           features: ["파일 업로드", "3D모델 Viewer"],
           github: "https://github.com/yuseonyoung/3DModelViewer",
-          demo: "/video/3dModelView.mp4"
+          demo: "/video/3dModelViewer.mp4"
         }
       },
       // 더 많은 프로젝트 추가
