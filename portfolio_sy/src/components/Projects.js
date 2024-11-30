@@ -28,6 +28,7 @@ const Projects = ({ onProjectClick }) => {
         details: {
           overview: `Gis(지리 정보 시스템)과 EgovFramework(전자정부 서비스 개발표준 프레임워크)를 공부하기 위하여 시작된 토이 프로젝트이며 <br>
                     최근 등산이 유행한다고 하여 등산러들을 위한 SNS를 기획하여 만들었고, 벤치마킹은 Instagram을 참고하여 만들었습니다. <br>
+                    <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다. ]</strong></p>
                     `,
           features: ["로그인", "게시물관리", "친구의 게시물 조회", "모집게시물 관리", "댓글" , "도 경계 조회 및 선택" , "100대명산 정보 조회", "지역통계"],
           github: "https://github.com/yuseonyoung/mountain_projects?tab=readme-ov-file"
@@ -79,6 +80,7 @@ const Projects = ({ onProjectClick }) => {
                     <br>
                     <br>
                     사용자는 3D모델 파일과 텍스처 파일을 업로드하고, 이를 실시간으로 확인하거나 조작할 수 있어, 디자이나, 개발자, 3D 그래픽 분야의 사용자들에게 유용한 애플리케이션이 될것입니다. <br>
+                    <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다. ]</strong></p>
                     `,
           features: ["파일 업로드", "3D모델 Viewer"],
           github: "https://github.com/yuseonyoung/3DModelViewer",
