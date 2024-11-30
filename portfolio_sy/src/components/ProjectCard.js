@@ -16,7 +16,7 @@ const ProjectCard = ({ project, onClick }) => {
       <div className="mt-4">
         <h3 className="text-xl font-semibold">{project.title}</h3>
         <p className="mt-2">{project.description}</p>
-        <div className="mt-4 flex space-x-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {project.technologies.map((tech, index) => (
             <span key={index} className="bg-blue-500 text-white px-2 py-1 rounded">
               {tech}
