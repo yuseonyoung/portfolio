@@ -28,7 +28,7 @@ const Projects = ({ onProjectClick }) => {
         details: {
           overview: `Gis(지리 정보 시스템)과 EgovFramework(전자정부 서비스 개발표준 프레임워크)를 공부하기 위하여 시작된 토이 프로젝트이며 <br>
                     최근 등산이 유행한다고 하여 등산러들을 위한 SNS를 기획하여 만들었고, 벤치마킹은 Instagram을 참고하여 만들었습니다. <br>
-                    ,`,
+                    `,
           features: ["로그인", "게시물관리", "친구의 게시물 조회", "모집게시물 관리", "댓글" , "도 경계 조회 및 선택" , "100대명산 정보 조회", "지역통계"],
           github: "https://github.com/yuseonyoung/mountain_projects?tab=readme-ov-file"
         }
@@ -62,29 +62,46 @@ const Projects = ({ onProjectClick }) => {
                             </li>
                         </ol>
                     </ul>
-
                     `,
           features: ["인터파크 서버 시간 동기화", "Google Chrome 계정 동기화", "티켓 예매", "계정별 API호출", "캡챠인증"],
           demo: "/video/interparkTestVideo.mp4"
+        }
+      },
+      {
+        id: 4,
+        title: "3D 모델 Viewer",
+        description: "3D 모델 파일과 텍스처를 통합하는 웹 ",
+        image: "/images/3dModelViewer.png",
+        technologies: ["HTML", "Javascript","Three.js","CSS"],
+        details: {
+          overview: `3D 모델 Viewer는 3D 모델을 시각화하고 상호작용할 수 있는 웹 기반 애플리케이션 입니다.<br>
+                    HTML,CSS,JavaScript 기술을 사용하였고 Three.js 라이브러리를 활용하여 3D 객체의 렌더링 및 조작을 제공합니다.<br>
+                    <br>
+                    <br>
+                    사용자는 3D모델 파일과 텍스처 파일을 업로드하고, 이를 실시간으로 확인하거나 조작할 수 있어, 디자이나, 개발자, 3D 그래픽 분야의 사용자들에게 유용한 애플리케이션이 될것입니다. <br>
+                    `,
+          features: ["파일 업로드", "3D모델 Viewer"],
+          github: "https://github.com/yuseonyoung/3DModelViewer",
+          demo: "/video/3dModelView.mp4"
         }
       },
       // 더 많은 프로젝트 추가
     ];
   
     return (
-      <section id="projects" className="min-h-screen py-20">
+      <section id="projects" className="min-h-screen py-10 md:py-20">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="container mx-auto px-6"
+          className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12"
         >
-            <h2 className="w-full text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-none h-24">
-                My Projects
-            </h2>
+          <h2 className="w-full text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-none">
+            My Projects
+          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {projects.map((project) => (
               <ProjectCard
                 key={project.id}
