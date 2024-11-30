@@ -17,7 +17,10 @@ const Projects = ({ onProjectClick }) => {
         }
       }
     };
-  
+    const itemVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    };
     const projects = [
       {
         id: 2,
@@ -90,31 +93,45 @@ const Projects = ({ onProjectClick }) => {
       // 더 많은 프로젝트 추가
     ];
   
-    return (
+  return (
       <section id="projects" className="min-h-screen py-10 md:py-20">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={inView ? 'visible' : 'hidden'}
           className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12"
         >
-          <h2 className="w-full text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-none">
+          <motion.h2
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full text-2xl md:text-5xl lg:text-4xl font-bold mb-8 md:mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-normal mt-4 line-height-2_9"
+          >
             My Projects
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          </motion.h2>
+  
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            variants={containerVariants}
+          >
             {projects.map((project) => (
-              <ProjectCard
+              <motion.div
                 key={project.id}
-                project={project}
-                onClick={() => onProjectClick(project)}
-              />
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ProjectCard
+                  project={project}
+                  onClick={() => onProjectClick(project)}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </section>
     );
   };
-
-export default Projects;  
+  
+  export default Projects;
