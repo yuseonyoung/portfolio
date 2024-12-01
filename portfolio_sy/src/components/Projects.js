@@ -86,8 +86,8 @@ const Projects = ({ onProjectClick }) => {
                     <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다. ]</strong></p>
                     `,
           features: ["파일 업로드", "3D모델 Viewer"],
-          github: "https://github.com/yuseonyoung/3DModelViewer",
-          demo: "/video/3dModelViewer.mp4"
+          demo: "/video/3DModelViewer.mp4",
+          github: "https://github.com/yuseonyoung/3DModelViewer"
         }
       },
       // 더 많은 프로젝트 추가
