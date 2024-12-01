@@ -2,12 +2,24 @@ import { useEffect } from "react";
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
-    // 모달 열릴 때 스크롤 비활성화
-    document.body.style.overflow = "hidden";
+    // 모든 디바이스에서 스크롤 방지
+    const preventScroll = (e) => {
+      e.preventDefault();
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    };
 
-    // 모달 닫힐 때 스크롤 다시 활성화
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener("touchmove", preventScroll, { passive: false });
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+
+    // 클린업 함수에서 스크롤 복원
     return () => {
+      window.removeEventListener("touchmove", preventScroll);
       document.body.style.overflow = "auto";
+      document.body.style.position = "static";
     };
   }, []);
 
@@ -19,32 +31,33 @@ const ProjectModal = ({ project, onClose }) => {
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
         {/* 모달 박스 */}
-        <div className="relative inline-block w-full max-w-3xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-          {/* 닫기 버튼 */}
-          <button
-            onClick={onClose}
-            className="absolute top-1 right-2 p-2 text-gray-400 hover:text-gray-500"
-          >
-            <span className="sr-only">닫기</span>
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+        <div className="relative inline-block w-full max-w-3xl overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+          {/* 모달 헤더 */}
+          <div className="flex items-center justify-between bg-gray-100 px-6 py-4 border-b border-gray-200">
+            <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
+            <button
+              onClick={onClose}
+              className="text-gray-400 hover:text-gray-500 focus:outline-none"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-          {/* 콘텐츠 */}
-          <div className="mt-3 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
-            <h3 className="text-2xl font-bold leading-6 text-gray-900 mb-4">
-              {project.title}
-            </h3>
+              <span className="sr-only">닫기</span>
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* 모달 콘텐츠 */}
+          <div className="p-6 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
             <img
               src={project.image}
               alt={project.title}
