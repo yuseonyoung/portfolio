@@ -2,22 +2,24 @@ import { useEffect } from "react";
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
-    // 모든 디바이스에서 스크롤 방지
+    // 스크롤 방지 함수
     const preventScroll = (e) => {
-      e.preventDefault();
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
+      // 모달 내부에서 스크롤이 가능하도록 수정
+      if (!e.target.closest('.modal-content')) {
+        e.preventDefault();
+      }
     };
 
-    // 스크롤 이벤트 리스너 추가
-    window.addEventListener("touchmove", preventScroll, { passive: false });
+    // 모바일 및 데스크톱 스크롤 이벤트 리스너 추가
     document.body.style.overflow = "hidden";
     document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    
+    window.addEventListener('touchmove', preventScroll, { passive: false });
 
-    // 클린업 함수에서 스크롤 복원
     return () => {
-      window.removeEventListener("touchmove", preventScroll);
+      // 클린업 함수에서 스크롤 복원
+      window.removeEventListener('touchmove', preventScroll);
       document.body.style.overflow = "auto";
       document.body.style.position = "static";
     };
@@ -57,7 +59,15 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
 
           {/* 모달 콘텐츠 */}
-          <div className="p-6 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+          <div 
+            className="modal-content p-6 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
+            // 터치 무브 이벤트 중지
+            onTouchMove={(e) => {
+              if (e.target.closest('.modal-content')) {
+                e.stopPropagation();
+              }
+            }}
+          >
             <img
               src={project.image}
               alt={project.title}
