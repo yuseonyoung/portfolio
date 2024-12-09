@@ -24,6 +24,89 @@ const Projects = ({ onProjectClick }) => {
     const projects = [
       {
         id: 2,
+        title: "AIM ERP Project",
+        description: "UI/UX를 개선한 ERP Project",
+        image: "/images/erpImages.PNG",
+        technologies: ["SpringFrameWork", "SpringSecurity", "tilesFrameWork","javascript", "Mybatis", "Oracle", "SVN","java", "HTML", "Css", "bootstrap","Kakao API", "Google Map API"],
+        details: {
+          overview: `AIM ERP 프로젝트는 재고관리, 창고관리, 구매 및 판매, 인사관리 프로세스를 통합하여 효율적인 창고 및 재고 관리를 목표로 한 ERP 시스템입니다. <br>
+                    주요 목표:
+                    \n- 효율적인 창고 및 재고 관리
+                    \n- 프로세스 간소화
+                    \n- 사용자 경험(UX) 대폭 향상
+                    <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다.]</strong></p>
+                    `,
+          period: "2023.10.26 ~ 2023.12.14",
+          teamComposition: "총 7명 (PL, TA, AA x 2, BA, DA, UA)",
+          myRole: "프로젝트 리더 (PL)",
+          detailedRoles: [
+            {
+              title: "품목관리",
+              description: [
+                "품목 등록, 수정, 삭제 및 조회 기능 구현",
+                "대량 데이터 페이징 처리 및 조건부 검색 최적화",
+                "품목별 정보 연계 (재고수량, 단가, 품목 상태 등)"
+              ]
+            },
+            {
+              title: "창고관리",
+              description: [
+                "창고 등록, 수정, 삭제 기능 구현",
+                "Google Map을 활용한 GIS 기반 창고 위치 시각화",
+                "Kakao 주소 API 활용한 정확한 주소 등록"
+              ]
+            },
+            {
+              title: "창고구역관리",
+              description: [
+                "창고 구역 등록 및 최적화 배치",
+                "비동기 처리를 통한 빠른 데이터 로딩",
+                "창고 및 구역 데이터 매핑",
+                `고급 기능: 
+                  \n- 드래그 앤 드롭 방식의 구역 등록/수정
+                  \n- 실제 창고 도면 기반 구역 설정
+                  \n- 층별 구역 관리
+                  \n- 구역 중첩 및 최소 면적 검증
+                  \n- 품목 이동 기능`
+              ]
+            },
+            {
+              title: "발주요청관리",
+              description: [
+                "발주요청서 작성, 승인, 상태 관리",
+                "실시간 메일 알림 시스템",
+                "비즈니스 로직 기반 트랜잭션 처리"
+              ]
+            },
+            {
+              title: "재고입출고관리",
+              description: [
+                `창고 입고관리:
+                  \n- 발주서 기반 입고 예정 품목 모니터링 및 입고 처리`,
+                `창고 출고관리: 
+                  \n- 출하지시서 기반 출고 예정 품목 모니터링 및 출고 처리
+                  \n- 데이터베이스 트리거를 통한 자동 재고 연동`
+              ]
+            },
+            {
+              title: "재고관리",
+              description: [
+                `실사재고 관리:
+                  \n- 시스템 재고와 실사재고 간 오차 확인
+                  \n- 재고 조정 기능`,
+                `불량재고 관리:
+                  \n- 불량 자재 추적 및 관리
+                  \n- 데이터베이스 트리거를 통한 재고 수량 자동 연동
+                  \n- 폐기 프로세스 통합 관리`
+              ]
+            }
+          ],
+          features: ["품목관리", "창고관리", "창고구역관리", "발주요청관리", "재고입출고관리" , "재고입출고관리" , "재고관리", "발주관리", "대시보드", "메일관리", "로그인/권한관리", "알람", "전자결재관리", "판매관리", "게시판관리", "인사관리", "시스템관리"],
+          github: "https://github.com/yuseonyoung/FinalProject"
+        }
+      },
+      {
+        id: 3,
         title: "등산어때",
         description: "등산러들을 위한 sns",
         image: "/images/mountainProject.png",
@@ -33,12 +116,16 @@ const Projects = ({ onProjectClick }) => {
                     최근 등산이 유행한다고 하여 등산러들을 위한 SNS를 기획하여 만들었고, 벤치마킹은 Instagram을 참고하여 만들었습니다. <br>
                     <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다. ]</strong></p>
                     `,
+          period : null,
+          teamComposition : null,
+          myRole : null,
+          detailedRoles : null, 
           features: ["로그인", "게시물관리", "친구의 게시물 조회", "모집게시물 관리", "댓글" , "도 경계 조회 및 선택" , "100대명산 정보 조회", "지역통계"],
           github: "https://github.com/yuseonyoung/mountain_projects?tab=readme-ov-file"
         }
       },
       {
-        id: 3,
+        id: 4,
         title: "인터파크티켓 예매 매크로 및 캡챠인증",
         description: "대기열을 빨리 받을 수 있는 프로그램",
         image: "/images/interparkWatingMacro.png",
@@ -67,12 +154,16 @@ const Projects = ({ onProjectClick }) => {
                         </ol>
                     </ul>
                     `,
+          period : null,
+          teamComposition : null,
+          myRole : null,    
+          detailedRoles : null,      
           features: ["인터파크 서버 시간 동기화", "Google Chrome 계정 동기화", "티켓 예매", "계정별 API호출", "캡챠인증"],
           demo: "/video/interparkTestVideo.mp4"
         }
       },
       {
-        id: 4,
+        id: 5,
         title: "3D 모델 Viewer",
         description: "3D 모델 파일과 텍스처를 통합하는 웹 ",
         image: "/images/3dModelViewer.png",
@@ -85,6 +176,10 @@ const Projects = ({ onProjectClick }) => {
                     사용자는 3D모델 파일과 텍스처 파일을 업로드하고, 이를 실시간으로 확인하거나 조작할 수 있어, 디자이나, 개발자, 3D 그래픽 분야의 사용자들에게 유용한 애플리케이션이 될것입니다. <br>
                     <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다. ]</strong></p>
                     `,
+          period : null,
+          teamComposition : null,
+          myRole : null,        
+          detailedRoles : null,  
           features: ["파일 업로드", "3D모델 Viewer"],
           demo: "/video/3DModelViewer.mp4",
           github: "https://github.com/yuseonyoung/3DModelViewer"

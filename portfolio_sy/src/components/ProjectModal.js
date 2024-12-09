@@ -73,7 +73,61 @@ const ProjectModal = ({ project, onClose }) => {
               alt={project.title}
               className="w-full h-auto max-h-80 object-cover rounded-lg mb-6"
             />
-            <div className="space-y-4">
+            {/* 기술 스택 섹션 */}
+            {project.technologies && project.technologies.length > 0 && (
+                <div style={{ marginTop: "20px" }}>
+                  <h4 className="text-lg font-semibold mb-2">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span 
+                        key={index} 
+                        className="px-2 py-1 bg-gray-200 text-gray-800 rounded-md text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {/* 프로젝트 기간 */}
+              {project.details.period && (
+                <div style={{ marginTop: "20px" }}> 
+                  <h4 className="text-lg font-semibold mb-2">Project Period</h4>
+                  <p className="text-gray-600">{project.details.period}</p>
+                </div>
+              )}
+              {/* 팀 구성 */}
+              {project.details.teamComposition && (
+                <div style={{ marginTop: "20px" }}>
+                  <h4 className="text-lg font-semibold mb-2">Team Composition</h4>
+                  <p className="text-gray-600">{project.details.teamComposition}</p>
+                </div>
+              )}
+              {/* 개인 역할 */}
+              {project.details.myRole && (
+                <div style={{ marginTop: "20px" }}> 
+                  <h4 className="text-lg font-semibold mb-2">My Role</h4>
+                  <p className="text-gray-600">{project.details.myRole}</p>
+                </div>
+              )}
+              {/* 상세 역할 */}
+              {project.details.detailedRoles && project.details.detailedRoles.length > 0 && (
+                <div style={{ marginTop: "20px" }}>
+                  <h4 className="text-lg font-semibold mb-2">Detailed Roles</h4>
+                  {project.details.detailedRoles.map((role, index) => (
+                    <div key={index} className="mb-4">
+                      <h5 className="font-medium text-gray-800">{role.title}</h5>
+                      <ul className="list-disc list-inside text-gray-600">
+                        {role.description.map((desc, descIndex) => (
+                          <li key={descIndex}>{desc}</li>
+                          
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            <div className="space-y-4" style={{ marginTop: "20px" }}>
               <div>
                 <h4 className="text-lg font-semibold mb-2">Overview</h4>
                 <div
@@ -89,6 +143,10 @@ const ProjectModal = ({ project, onClose }) => {
                   ))}
                 </ul>
               </div>
+
+              
+
+              {/* GitHub 및 데모 링크 */}
               <div className="flex flex-wrap gap-4">
                 {project.details.github && (
                   <a
