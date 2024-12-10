@@ -2,26 +2,20 @@ import { useEffect } from "react";
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
-    // 스크롤 방지 함수
     const preventScroll = (e) => {
-      // 모달 내부에서 스크롤이 가능하도록 수정
       if (!e.target.closest('.modal-content')) {
         e.preventDefault();
       }
     };
-
-    // 모바일 및 데스크톱 스크롤 이벤트 리스너 추가
+  
     document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-    
+    window.addEventListener('wheel', preventScroll, { passive: false });
     window.addEventListener('touchmove', preventScroll, { passive: false });
-
+  
     return () => {
-      // 클린업 함수에서 스크롤 복원
+      window.removeEventListener('wheel', preventScroll);
       window.removeEventListener('touchmove', preventScroll);
       document.body.style.overflow = "auto";
-      document.body.style.position = "static";
     };
   }, []);
 
@@ -119,8 +113,10 @@ const ProjectModal = ({ project, onClose }) => {
                       <h5 className="font-medium text-gray-800">{role.title}</h5>
                       <ul className="list-disc list-inside text-gray-600">
                         {role.description.map((desc, descIndex) => (
-                          <li key={descIndex}>{desc}</li>
-                          
+                          <li 
+                            key={descIndex} 
+                            dangerouslySetInnerHTML={{ __html: desc }}
+                          />
                         ))}
                       </ul>
                     </div>
