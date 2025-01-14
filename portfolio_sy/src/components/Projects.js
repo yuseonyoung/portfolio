@@ -23,6 +23,77 @@ const Projects = ({ onProjectClick }) => {
     };
     const projects = [
       {
+        id: 1,
+        title: "스마트댐 안전관리 플랫폼",
+        description: "4차 산업혁명 기술 (디지털트윈, 인공지능, 빅데이터 분석) 등 데이터 기반의 스마트 댐 안전관리 체계 구축 ",
+        image: "/images/smartdam.png",
+        technologies: ["WebSquare5","JavaScript","Java","Hasim framework","D3.js","rMateChart.js","echarts.js","ArcGIS","Mybatis","Tibero"],
+        details: {
+          overview: `스마트댐 안전관리의 재난안전관리 기능을 맡아 작업하였습니다.  <br>
+                    ※ 맡은 기능 <br><br>
+                    1. 댐 안전성 해석 시나리오 관리  <br>
+                    2. 댐 안전성 해석 시뮬레이션 시각화  <br>
+                    3. 실시간 수위 연동 및 수위모니터링  <br>
+                    4. CCTV POI 연동, 실시간 영상 조회 및 프리셋 관리 <br>
+                    5. 지진이력 <br>
+                       <span class="pl-4"> -지진발생이력, 계측기정보, 위기대응보고서, 안전성해석, 긴급점검대상시설물  <span><br> 
+                    6. 재난대응매뉴얼<br> 
+                    <p><strong>[ 폐쇄망 보안 작업이므로 Github는 제공하지 않습니다. ]</strong></p>
+                    `,
+          period: "2024.02 ~ 2025.02",
+          teamComposition: "기업 프로젝트",
+          myRole: "Full-Stack 개발",
+          features: null,
+          detailedRoles: [
+            {
+              title: "댐 안전성 해석 시나리오 관리",
+              description: [
+                "연구원에서 넘어오는 댐안전성 해석데이터를 관리하는 기능",
+                "Pagination, 상세검색 적용"
+              ]
+            },
+            {
+              title: "댐 안전성 해석 시뮬레이션 시각화",
+              description: [
+                "댐 안전성 해석 결과 데이터를 기반으로 분석결과를 시뮬레이션 하는 기능",
+                "댐, 지진발생목록을 선택하면 해당 댐의 재질과 축변위를 SVG에 그려 보여주며",
+                "결과 축과 배율을 선택하여 재생하면 지진발생 시간별로 댐이 지진에 의해 영향을 받은 결과와 컨투어별 색상을을 보여준다.",
+                "영향의 방향을 화살표를 이동하여 표시하며 각 시간대별로 지진계와 X축절점, Y축절점을 rMate 차트로 나타내어 보여준다."
+              ]
+            },
+            {
+              title: "실시간 수위 연동 및 수위모니터링 ",
+              description: [
+                "통합모니터링(대시보드)에서 수위버튼을 클릭하면 37개 댐DT를 기준으로 댐의 상류면으로 카메라의 시점을 이용하여 댐의 뒷면을 보여준다.",
+                "통합모니터링상의 댐DT 상류면에 waterLayer를 생성하여 화면에 출력한다.",
+                "댐DT상의 기준수위를 3D Polygon객체를 생성하여 표시한다.",
+                "실시간수위모니터링 기능을 이용하여 기간별로 수위의 높이를 표시하며 TimeLine차트를 통하여 시간대를 이동시 댐의 수위를 해당 시간에 맞는 수위로 표시한다.(waterLayer와 차트 연동)"
+              ]
+            },
+            {
+              title: "CCTV POI 연동, 실시간 영상 조회 및 프리셋 관리",
+              description: [
+                "통합모니터링(대시보드)에서 CCTV버튼을 클릭하면 37개 댐DT에 CCTV POI와 CCTV 모니터링 Widget 화면을 출력한다.",
+                "Poi 및 CCTV 모니터링의 영상을 클릭시 큰 화면의 CCTV가 widget으로 출력되며 실시간 영상이 출력된다. ",
+                "프리셋(즐겨찾기)를 관리하며 조회시 프리셋으로 등록된 CCTV 리스트가 큰 화면의 CCTV로 조회된다."
+                ]
+            },
+            {
+              title: "지진이력",
+              description: [
+                "지진발생 이력,계측기정보, 위기대응보고서, 안전성해석, 긴급점검대상시설물에 대한 정보를 탭으로 구분하여 조회한다."
+                ]
+            },
+            {
+              title: "재난대응매뉴얼",
+              description: [
+                "D3의 Flowchart를 이용하여 조직도를 객체화하여 만들고 각 노드를 클릭시 해당되는 이벤트가 발생하여 정보를 조회한다."
+                ]
+            }
+          ] 
+        }
+      }
+      ,{
         id: 2,
         title: "AIM ERP Project",
         description: "UI/UX를 개선한 ERP Project",
