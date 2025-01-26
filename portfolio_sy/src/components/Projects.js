@@ -181,7 +181,7 @@ const Projects = ({ onProjectClick }) => {
         title: "등산어때",
         description: "등산러들을 위한 sns",
         image: "/images/mountainProject.png",
-        technologies: ["Qgis", "Geoserver", "EgovFramework","javascript", "java"],
+        technologies: ["Qgis", "Geoserver", "EgovFramework","javascript", "java", "HTML","CSS"],
         details: {
           overview: `Gis(지리 정보 시스템)과 EgovFramework(전자정부 서비스 개발표준 프레임워크)를 공부하기 위하여 시작된 토이 프로젝트이며 <br>
                     최근 등산이 유행한다고 하여 등산러들을 위한 SNS를 기획하여 만들었고, 벤치마킹은 Instagram을 참고하여 만들었습니다. <br>
@@ -197,6 +197,94 @@ const Projects = ({ onProjectClick }) => {
       },
       {
         id: 4,
+        title: "유튜브 영상 분석 웹사이트",
+        description: "현재 인기 Youtube 영상 및 검색어 별 영상 데이터 제공",
+        image: "/images/youtube.png",
+        technologies: ["python", "Django","Youtube api V3","Oauth(google)", "Next.js", "TypeScript", "TailwindCSS"],
+        details: {
+          overview: `유튜브 영상 분석 웹사이트는 Youtube API를 이용하여 인기 영상 및 검색어 별 영상 데이터를 제공하는 웹사이트입니다. <br>
+                    해당 웹 사이트트는 웹앱기반으로 만들어 졌으며 웹과 앱의 환경에서 UI/UX를 각각 다르게 적용하였습니다.<br>
+                    권한관리를 이용하여 관리자는 회원을 관리할 수 있는 기능을 추가하였습니다.<br>
+                    `,
+          period : null,
+          teamComposition : null,
+          myRole : null,    
+          detailedRoles: [
+            {
+              title: "로그인",
+              description: [
+                "Google Oauth를 이용하여 로그인",
+              ]
+            },
+            {
+              title: "인기 급상승 동영상 조회",
+              description: [
+                "검색어를 입력하지 않은상태로 전체 조회시 인기 급상승 동영상을 조회함",
+                "정렬조건은 채널명, 구독자수, 제목, 영상길이, 조회수, 좋아요, 댓글수, 업로드일자 별로 정렬할 수 있음",
+                "페이징은 무한스크롤로 구현되어 있음"
+              ]
+            },
+            {
+              title: "검색 동영상 조회",
+              description: [
+                "검색어를 입력한 뒤 조회하면 검색 동영상을 조회함",
+                "정렬조건은 채널명, 구독자수, 제목, 영상길이, 조회수, 좋아요, 댓글수, 업로드일자 별로 정렬할 수 있음",
+                "검색기간은 1주 ~ 1년까지 필터링 할 수 있음",
+                "영상조건은 short만, shrot제외, 전체동영상으로 필터링 할 수 있음",
+                "페이징은 무한스크롤로 구현되어 있음"
+              ]
+            },
+            {
+              title: "동영상 상세정보 조회",
+              description: [
+                "영상을 클릭하면 해당 영상의 상세정보를 조회함",
+                "영상의 썸네일, 제목, 채널명, 태그, 유튜브 링크 및 구독자수 대비 조회수 비율, 일평균 조회수, 최근 1개월 조회수 추이를 그래프로 보여줌"
+              ]
+            },
+            {
+              title: "엑셀 다운로드",
+              description: [
+                "조회된 정보를 엑셀로 다운로드하여 확인할 수 있음"
+              ]
+            },
+            {
+              title: "구글 docs",
+              description: [
+                "구글 docs를 이용하여 사용자의 피드백을 받을 수 있음"
+              ]
+            },
+            {
+              title: "회원관리",
+              description: [
+                "회원을 관리(등급)할 수 있으며 검색기록 Log를 확인할 수 있음",
+                "검색 및 페이징 처리"
+              ]
+            },
+          ],      
+          features: ["Google Oauth", "로그인", "Youtube Api V3", "영상 조회", "상세 검색", "웹앱",],
+          demo: "/video/youtube_sample.mp4"
+        }
+      },
+      {
+        id: 5,
+        title: "엑셀 VBA와 웹 자동화 연동 프로젝트",
+        description: "엑셀의 매크로 기능을 이용하여 VBA 코드의 웹자동화 로직을 이용하여 엑셀시트에 있는 정보를 손쉽게 웹사이트에 입력하고 저장할 수 있는 프로그램",
+        image: "/images/excel.png",
+        technologies: ["Excel", "VBA","Selenium","AutoIt"],
+        details: {
+          overview: `엑셀의 매크로 기능을 이용하여 VBA 코드의 웹자동화 로직을 이용하여 엑셀시트에 있는 정보를 손쉽게 웹사이트에 입력하고 저장할 수 있는 프로그램입니다.<br>
+                    본 프로젝트는 Excel로 관리하는 데이터를 건설공사안전관리에 자동으로 입력하여주는 자동화 프로그램입니다.<br>
+                    `,
+          period : null,
+          teamComposition : null,
+          myRole : null,    
+          detailedRoles : null,      
+          features: ["AutoIt을 통한 파일추가", "웹 자동화", "엑셀 매크로"],
+          demo: "/video/excel_videos.mp4"
+        }
+      },
+      {
+        id: 6,
         title: "인터파크티켓 예매 매크로 및 캡챠인증",
         description: "대기열을 빨리 받을 수 있는 프로그램",
         image: "/images/interparkWatingMacro.png",
@@ -234,7 +322,7 @@ const Projects = ({ onProjectClick }) => {
         }
       },
       {
-        id: 5,
+        id: 7,
         title: "3D 모델 Viewer",
         description: "3D 모델 파일과 텍스처를 통합하는 웹 ",
         image: "/images/3dModelViewer.png",
