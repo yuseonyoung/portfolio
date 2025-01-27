@@ -104,7 +104,7 @@ const ProjectModal = ({ project, onClose }) => {
                 <h4 className="text-lg font-semibold mb-2">Detailed Roles</h4>
                 {project.details.detailedRoles.map((role, index) => (
                   <div key={index} className="mb-4">
-                    <h5 className="font-medium text-gray-800">{role.title}</h5>
+                    <h1 className="font-xl"><strong>{role.title}</strong></h1>
                     <ul className="list-disc list-inside text-gray-600">
                       {role.description.map((desc, descIndex) => (
                         <li 

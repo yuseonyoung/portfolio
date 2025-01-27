@@ -262,7 +262,7 @@ const Projects = ({ onProjectClick }) => {
             },
           ],      
           features: ["Google Oauth", "로그인", "Youtube Api V3", "영상 조회", "상세 검색", "웹앱",],
-          demo: "/video/youtube_sample.mp4"
+          demo: "/video/youtube_video.mp4"
         }
       },
       {
