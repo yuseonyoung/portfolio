@@ -181,10 +181,11 @@ const Projects = ({ onProjectClick }) => {
         title: "등산어때",
         description: "등산러들을 위한 sns",
         image: "/images/mountainProject.png",
-        technologies: ["Qgis", "Geoserver", "EgovFramework","javascript", "java", "HTML","CSS"],
+        technologies: ["Qgis", "Geoserver", "EgovFramework","javascript", "java", "HTML","CSS","PostgreSQL","OpenLayers"],
         details: {
           overview: `Gis(지리 정보 시스템)과 EgovFramework(전자정부 서비스 개발표준 프레임워크)를 공부하기 위하여 시작된 토이 프로젝트이며 <br>
-                    최근 등산이 유행한다고 하여 등산러들을 위한 SNS를 기획하여 만들었고, 벤치마킹은 Instagram을 참고하여 만들었습니다. <br>
+                    최근 등산이 유행한다고 하여 등산러들을 위한 SNS를 기획하여 만들었습니다. <br>
+                    벤치마킹은 Instagram을 참고하여 만들었습니다. <br>
                     <p><strong>[ Github의 readMe에 더욱 자세한 설명이 작성되어 있습니다. ]</strong></p>
                     `,
           period : null,
